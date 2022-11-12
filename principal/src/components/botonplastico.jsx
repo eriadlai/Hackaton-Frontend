@@ -1,21 +1,3 @@
-/*import React, { Component } from "react";
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-//import MyImage from "./img/botella.png"
-// 11 <button><img src={"botella.png"} /></button>
-class Botonplastico extends Component {
-    
-    render() { 
-        return ( 
-            <Stack spacing={2} direction="row">
- 
-    <Button variant="outlined"><img src={"botella.png"} />Outlingggged</Button>
-    </Stack>
-        );
-    }
-}
-export default Botonplastico;
-*/
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -60,10 +42,12 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
       opacity: 0,
     },
     '& .MuiTypography-root': {
-      border: '4px solid currentColor',
+        border: '4px solid currentColor',
+       
     },
   },
-}));
+}
+));
 
 const ImageSrc = styled('span')({
   position: 'absolute',
@@ -72,7 +56,7 @@ const ImageSrc = styled('span')({
   top: 0,
   bottom: 0,
   backgroundSize: 'cover',
-  backgroundPosition: 'center 40%',
+  backgroundPosition: 'center 100%',
 });
 
 const Image = styled('span')(({ theme }) => ({
