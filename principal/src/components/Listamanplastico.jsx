@@ -1,8 +1,4 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
 import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,39 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Stack } from '@mui/system';
 
-/* export default function TitlebarImageList() {
-  return (
-  <> 
-     <ImageList  sx={{ width: 500, height: 450,}}>
-      <ImageListItem key="Subheader" cols={2}>
-        <ListSubheader component="div">Plastico</ListSubheader>
-      </ImageListItem>
 
-
-      
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={item.author}
-            actionIcon={
-              <Button variant="contained">Ver</Button>
-            }
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-  </>
- 
-  );
-}
-*/
 const itemData = [
   {
     url: 'comedero.jpg',
