@@ -10,7 +10,7 @@ class Login extends Component {
             <Box sx={{ width: '100%', maxWidth: 500 }}>
                  
         <Typography variant="h4" className='negrita' gutterBottom>
-        INICIAR SESION 
+        INICIAR SESION aaaaa
 
       </Typography>
         </Box>
