@@ -9,7 +9,7 @@ class Login extends Component {
             <>
             <Box sx={{ width: '100%', maxWidth: 500 }}>
         <Typography variant="h3" gutterBottom>
-        INICIAR SESION 
+        INICIAR SESion
 
       </Typography>
         </Box>
