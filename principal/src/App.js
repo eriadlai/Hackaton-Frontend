@@ -1,12 +1,9 @@
 import React from 'react';
-import BarraSuperior from './components/BarraSuperior';
-import Dashboard from './components/Dashboard';
-import Login from './pages/Login'
+import Router from "./routes/Router";
 function App() {
     return ( 
         <>
-         
-        <Dashboard/>
+        <Router/>
         </>
     );
 }
