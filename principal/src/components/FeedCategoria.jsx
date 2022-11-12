@@ -8,36 +8,42 @@ const images = [
   {
     url: "madera.jpg",
     title: "Madera",
+    ruta:"/Madera",
     description: "Descripcion del apartado de MADERA",
     width: "25%",
   },
   {
     url: "papel.jpg",
     title: "Papel/Cartón",
+    ruta:"/Papel",
     description: "Descripcion del apartado de PAPEL",
     width: "25%",
   },
   {
     url: "vidrio.jpg",
     title: "Vidirio",
+    ruta:"/Vidrio",
     description: "Descripcion del apartado de VIDRIO",
     width: "25%",
   },
   {
     url: "plastico.jpg",
     title: "Plastico",
+    ruta:"/Plastico",
     description: "Descripcion del apartado de PLASTICO",
     width: "25%",
   },
   {
     url: "metales.jpg",
     title: "Metales",
+    ruta:"/Metales",
     description: "Descripcion del apartado de METALES",
     width: "25%",
   },
   {
     url: "textilws.jpg",
     title: "Textiles",
+    ruta:"/Textiles",
     description: "Descripcion del apartado de TEXTILES",
     width: "25%",
   },
@@ -69,7 +75,7 @@ export default function MultiActionAreaCard() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
+              <Button size="small" color="primary" href={image.ruta}>
                 Ver mas
               </Button>
             </CardActions>
