@@ -11,6 +11,7 @@ export default function BotonLog() {
         onClick={() => {
           alert("clicked");
         }}
+        s
         Click
         me
       >
