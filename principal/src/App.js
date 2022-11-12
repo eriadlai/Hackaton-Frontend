@@ -1,11 +1,10 @@
 import React from 'react';
-import SignIn from './components/SignIn';
-
+import Botonplastico from './components/Botonplastico';
 
 function App() {
     return ( 
         <>
-         <SignIn/>
+         <Botonplastico/>
         
         </>
     );
