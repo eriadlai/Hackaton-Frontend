@@ -1,10 +1,10 @@
 import React from 'react';
-import Botonplastico from './components/Botonplastico';
+import Botones456 from './components/Botones456';
 
 function App() {
     return ( 
         <>
-         <Botonplastico/>
+         <Botones456/>
         
         </>
     );
