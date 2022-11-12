@@ -29,7 +29,7 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3, 4, 5, 6];
 
 const theme = createTheme();
 
@@ -41,7 +41,7 @@ export default function Principal() {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            poner algo
           </Typography>
         </Toolbar>
       </AppBar>
@@ -62,26 +62,28 @@ export default function Principal() {
               color="text.primary"
               gutterBottom
             >
-              Album layout
+              Seleccionar material
             </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="text.secondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
-            </Typography>
+            
             <Stack
               sx={{ pt: 4 }}
               direction="row"
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="outlined">PLastico</Button>
+              <Button variant="outlined">metales</Button>
+              <Button variant="outlined">textiles</Button>
+            </Stack>
+            <Stack
+              sx={{ pt: 4 }}
+              direction="row"
+              spacing={5}
+              justifyContent="center"
+            >
+              <Button variant="outlined">madera</Button>
+              <Button variant="outlined">papel</Button>
+              <Button variant="outlined">vidrio</Button>
             </Stack>
           </Container>
         </Box>
@@ -118,6 +120,7 @@ export default function Principal() {
                   <CardActions>
                     <Button size="small">View</Button>
                     <Button size="small">Edit</Button>
+                
                   </CardActions>
                 </Card>
               </Grid>
