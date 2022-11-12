@@ -1,12 +1,12 @@
-import React from "react";
-import Login from "./components/Login";
-import BotonLog from "./components/BotonLog";
-import BotonSignIn from "./components/BotonSignIn";
+import React from 'react';
+import Login from './components/Login';
 
 function App() {
   return (
     <>
-      <Login/>
+      <Login />
+      <BotonLog />
+      <BotonSignIn />
     </>
   );
 }
