@@ -19,11 +19,12 @@ export default function BarraSuperior() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            NombrePag
+            RE.cycle
           </Typography>
 
           <Button color="inherit">Buscar ideas </Button>

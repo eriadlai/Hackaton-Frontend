@@ -1,24 +1,25 @@
-.bordes {
-  border-radius: 15px;
-  width: 550px;
-  height: 600px;
-  border: 1px solid rgb(95, 95, 95);
-  position: absolute;
-  top: 10%;
-  left: 30%;
-}
+.bordes{
+    
+    border-radius: 15px;
+    width: 550px;
+    height: 600px;
+    border: 1px solid rgb(95, 95, 95); 
+    position: absolute;
+    top: 10%;
+    left: 30%;
 
-.centrar {
-  position: absolute;
+
+  }
+  
+.centrar{
+    position: absolute;
   left: 47.5%;
   top: auto;
-}
-.negrita {
-  font-weight: bold;
-}
-
-.top {
-  position: absolute;
-
-  top: 0%;
-}
+  }
+.negrita{
+    font-weight: bold;
+  }
+  .top{
+    position: absolute;
+    left: 29%;
+  }
