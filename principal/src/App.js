@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,6 +20,20 @@ function App() {
         </a>
       </header>
     </div>
+=======
+import React from "react";
+import BarraSuperior from "./components/BarraSuperior";
+import Dashboard from "./components/Dashboard";
+import Login from "./pages/Login";
+import PostIdea from "./pages/PostIdea";
+import MenuCategoria from "./components/MenuCategorias";
+import TextoListaMateriales from "./components/TextoListaMateriales";
+function App() {
+  return (
+    <>
+      <PostIdea />
+    </>
+>>>>>>> Stashed changes
   );
 }
 
