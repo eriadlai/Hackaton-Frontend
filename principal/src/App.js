@@ -6,9 +6,7 @@ import BotonSignIn from "./components/BotonSignIn";
 function App() {
   return (
     <>
-      <Login />
-      <BotonLog />
-      <BotonSignIn />
+      <Login/>
     </>
   );
 }
