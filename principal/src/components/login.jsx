@@ -1,13 +1,20 @@
-import React from "react";
+import React, { Component } from 'react'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
-const login= props =>{
-    return(
-        <>
-        <heading>
-            INICIAR SESION
-        </heading>
+class Login extends Component {
+    
+    render() { 
+        return (
+            <>
+            <Box sx={{ width: '100%', maxWidth: 500 }}>
+        <Typography variant="h3" gutterBottom>
+        INICIAR SESION 
+
+      </Typography>
+        </Box>
         </>
-    );
+        );
+    }
 }
-
-export default  login;
+export default Login;
