@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import "./Style.css";
+
 class Login extends Component {
     
     render() { 
@@ -14,8 +14,8 @@ class Login extends Component {
 
       </Typography>
         </Box>
-        </>
-        );
-    }
+      </>
+    );
+  }
 }
 export default Login;
