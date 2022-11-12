@@ -14,7 +14,7 @@ export default function BotonLog() {
         Click
         me
       >
-        Log in
+        Sign In
       </Button>
     </Stack>
   );

@@ -1,0 +1,14 @@
+.bordes{
+    border-radius: 20px;
+    width: 1000px;
+    height: 1000px;
+  }
+  
+.centrar{
+  left: 50%;
+  top: auto;
+  }
+  
+.negrita{
+    font-weight: bold;
+  }

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import React, { Component } from 'react'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 class Login extends Component {
     
@@ -8,8 +8,9 @@ class Login extends Component {
         return (
             <>
             <Box sx={{ width: '100%', maxWidth: 500 }}>
-        <Typography variant="h3" gutterBottom>
-        INICIAR SESION 
+                 
+        <Typography variant="h4" className='negrita' gutterBottom>
+        INICIAR SESION aaaaa
 
       </Typography>
         </Box>
