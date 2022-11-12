@@ -1,14 +1,14 @@
 import React from "react";
 import Login from "./components/Login";
 import BotonLog from "./components/BotonLog";
-import BarraSuperior from "./components/BarraSuperior";
+import BotonSignIn from "./components/BotonSignIn";
 
 function App() {
   return (
     <>
-      <BarraSuperior />
       <Login />
       <BotonLog />
+      <BotonSignIn />
     </>
   );
 }

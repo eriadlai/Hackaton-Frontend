@@ -3,24 +3,24 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-
+import "./Style.css"
 
 
 const images = [
   {
-    url: 'plastico.jpg',
-    title: 'Plastico',
+    url: 'madera.jpg',
+    title: 'Madera',
     width: '25%',
     
   },
  {
-    url: 'metales.jpg',
-    title: 'Metales',
+    url: 'papel.jpg',
+    title: 'Papel/Cartón',
     width: '25%',
   },
   {
-    url: 'textilws.jpg',
-    title: 'Textiles',
+    url: 'vidrio.jpg',
+    title: 'Vidirio',
     width: '25%',
   },
   
@@ -42,12 +42,13 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
       opacity: 0,
     },
     '& .MuiTypography-root': {
+    
         border: '4px solid currentColor',
+        
        
     },
   },
-}
-));
+}));
 
 const ImageSrc = styled('span')({
   position: 'absolute',
