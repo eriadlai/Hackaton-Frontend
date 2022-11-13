@@ -14,7 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { useEffect } from 'react';
-const API = "http://localhost:3000/API/Reciclaje/ManualidadByCategoria";
+const API = "http://localhost:3001/API/Reciclaje/Manualidad";
 const hoy=new Date();
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,13 +28,13 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard() {
-    const [oData, setData] = useState(null);
+    const [oData, setData] = useState();
 
     useEffect(() => {
         // GET request using fetch inside useEffect React hook
-        fetch(API,"Textiles")
+        fetch(API)
             .then(response => response.json())
-            .then(data => setData(data.total));
+            .then(data => setData(data));
 
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);
@@ -44,10 +44,9 @@ export default function RecipeReviewCard() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <>
-     {oData.map((datos) => (
+     {oData?.map((datos) => (
         <Card className='centro' sx={{ maxWidth: 1100 }}>
       <CardHeader
         avatar={
@@ -56,7 +55,7 @@ export default function RecipeReviewCard() {
           </Avatar>
         }
        
-        title={datos.titulo}        subheader= {hoy.toDateString()}
+        title={datos.oTitulo}        subheader= {hoy.toDateString()}
       />
       <CardMedia
         component="img"
@@ -67,7 +66,7 @@ export default function RecipeReviewCard() {
       <CardContent>
         <Typography variant="body2" color="text.secondary">
 
-         {datos.descripcion}
+         {datos.oContenido}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -92,10 +91,10 @@ export default function RecipeReviewCard() {
         <CardContent>
           <Typography paragraph>Descripcion:</Typography>
           <Typography paragraph>
-           {datos}
+           {datos.oAutor}
           </Typography>
           <Typography paragraph>
-           {datos}
+           {datos.oCategorias}
           </Typography>
         </CardContent>
       </Collapse>

@@ -46,7 +46,7 @@ export default function RecipeReviewCard() {
   };
   return (
     <>
-     {oData.map((datos) => (
+     {oData?.map((datos) => (
         <Card className='centro' sx={{ maxWidth: 1100 }}>
       <CardHeader
         avatar={
@@ -55,7 +55,7 @@ export default function RecipeReviewCard() {
           </Avatar>
         }
        
-        title={datos.titulo}        subheader= {hoy.toDateString()}
+        title={datos.oTitulo}        subheader= {hoy.toDateString()}
       />
       <CardMedia
         component="img"
@@ -66,7 +66,7 @@ export default function RecipeReviewCard() {
       <CardContent>
         <Typography variant="body2" color="text.secondary">
 
-         {datos.descripcion}
+         {datos.oContenido}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -91,10 +91,10 @@ export default function RecipeReviewCard() {
         <CardContent>
           <Typography paragraph>Descripcion:</Typography>
           <Typography paragraph>
-           {datos}
+           {datos.oAutor}
           </Typography>
           <Typography paragraph>
-           {datos}
+           {datos.oCategorias}
           </Typography>
         </CardContent>
       </Collapse>
