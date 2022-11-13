@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 const pages = [
   {
     Nav: "Publicar",
-    Ruta: "/Publicar",
+    Ruta: "/PostIdea",
   },
   {
     Nav: "Manualidades",

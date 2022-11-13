@@ -13,27 +13,24 @@ export default function MenuCategorias() {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
-        <InputLabel id="demo-simple-select-autowidth-label">
+      <FormControl sx={{ m: 1, minWidth: 250 }}>
+        <InputLabel id="categoria">
           Categoría
         </InputLabel>
         <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth"
+          labelId="categoria"
+          id="categoria"
           value={categorias}
           onChange={handleChange}
           autoWidth
           label="Categoría"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Metales</MenuItem>
-          <MenuItem value={21}>Plásticos</MenuItem>
-          <MenuItem value={22}>Textiles</MenuItem>
-          <MenuItem value={22}>Madera</MenuItem>
-          <MenuItem value={22}>Papel/Cartón</MenuItem>
-          <MenuItem value={22}>Vidrio</MenuItem>
+          <MenuItem value="Metales">Metales</MenuItem>
+          <MenuItem value="Plásticos">Plásticos</MenuItem>
+          <MenuItem value="Textiles">Textiles</MenuItem>
+          <MenuItem value="Madera">Madera</MenuItem>
+          <MenuItem value="Papel">Papel/Cartón</MenuItem>
+          <MenuItem value="Vidrio">Vidrio</MenuItem>
         </Select>
       </FormControl>
     </div>

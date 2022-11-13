@@ -13,7 +13,7 @@ export default function TextoInstrucciones() {
     <Box
       component="form"
       sx={{
-        "& .MuiTextField-root": { maxwidth: "100%", width: 550 },
+        "& .MuiTextField-root": { maxwidth: "100%", width: "100%" },
       }}
       noValidate
       autoComplete="off"
