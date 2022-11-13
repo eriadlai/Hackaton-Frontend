@@ -5,11 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Stack } from '@mui/system';
-
+import { useEffect } from 'react';
+const API = "http://localhost:3000/API/Reciclaje/ManualidadByCategoria";
 
 const itemData = [
   {
-    url: 'comedero.jpg',
+    url: 'https://source.unsplash.com/random',
     title: 'Comedero para pajaros',
     author: 'manualidad hecha con botellas de plastico',
     rows: 2,
@@ -17,7 +18,7 @@ const itemData = [
     featured: true,
   },
   {
-    url: 'macetaplastico.jpg',
+    url: 'https://source.unsplash.com/random',
     title: 'Maceta',
     author: 'manualidad hecha con botella de plsatico',
     rows: 2,
@@ -25,7 +26,7 @@ const itemData = [
     featured: true,
   },
   {
-    url: 'alcancia.jpg',
+    url: 'https://source.unsplash.com/random',
     title: 'alcancia',
     author: 'manualidad hecha con botellas',
     rows: 2,
@@ -33,7 +34,7 @@ const itemData = [
     featured: true,
   },
   {
-    url: 'estuche.jpg',
+    url: 'https://source.unsplash.com/random',
     title: 'estuche',
     author: 'manualidad hecha con botellas',
     rows: 2,
@@ -42,8 +43,17 @@ const itemData = [
   },
   
 ];
+export default function MultiActionAreaCard(parentToChild) {
+  console.log(parentToChild)
+  const [oRecetas, setRecetas] = React.useState(null);
 
-export default function MultiActionAreaCard() {
+  useEffect(() => {
+    // POST request using axios inside useEffect React hook
+    fetch(API, parentToChild.data)
+    .then(response => response.json())
+    .then(data => setRecetas(data.total));
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
+}, []);
   return (
     <Grid
       container

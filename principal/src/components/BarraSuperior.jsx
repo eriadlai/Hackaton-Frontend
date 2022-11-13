@@ -11,16 +11,8 @@ import { IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 const pages = [
   {
-    Nav: "Publicar",
-    Ruta: "/Publicar",
-  },
-  {
-    Nav: "Manualidades",
-    Ruta: "/Manualidades",
-  },
-  {
-    Nav: "Centros de Recilcaje",
-    Ruta: "/CentrosReciclajes",
+    Nav: "Recetas",
+    Ruta: "/RecetaUbicacion",
   },
 ];
 

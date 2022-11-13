@@ -1,53 +1,55 @@
-import * as React from "react";
+import React,{useState} from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
+import RecetaUbicacion from "../pages/RecetaUbicacion";
+import { Button, CardActionArea, CardActions, Grid} from "@mui/material";
 const images = [
   {
     url: "madera.jpg",
     title: "Madera",
-    ruta:"/Madera",
+    data:"/PageMadera",
     description: "Descripcion del apartado de MADERA",
     width: "25%",
   },
   {
     url: "papel.jpg",
     title: "Papel/Cartón",
-    ruta:"/Papel",
+    data:"/PagePapel",
     description: "Descripcion del apartado de PAPEL",
     width: "25%",
   },
   {
     url: "vidrio.jpg",
     title: "Vidirio",
-    ruta:"/Vidrio",
+    data:"/PageVidrio",
     description: "Descripcion del apartado de VIDRIO",
     width: "25%",
   },
   {
     url: "plastico.jpg",
     title: "Plastico",
-    ruta:"/Plastico",
+    data:"/PagePlastico",
     description: "Descripcion del apartado de PLASTICO",
     width: "25%",
   },
   {
     url: "metales.jpg",
     title: "Metales",
-    ruta:"/Metales",
+    data:"/PageMetales",
     description: "Descripcion del apartado de METALES",
     width: "25%",
   },
   {
     url: "textilws.jpg",
-    title: "Textiles",
-    ruta:"/Textiles",
+    title: "PageTextiles",
+
     description: "Descripcion del apartado de TEXTILES",
     width: "25%",
   },
 ];
+
 export default function MultiActionAreaCard() {
   return (
     <Grid
@@ -75,8 +77,8 @@ export default function MultiActionAreaCard() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary" href={image.ruta}>
-                Ver mas
+              <Button size="small" color="primary" href={image.data} >
+              Ver mas 
               </Button>
             </CardActions>
           </Card>
