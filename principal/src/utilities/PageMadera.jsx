@@ -14,7 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Container, CssBaseline, Grid } from '@mui/material';
+import { Box, Button, CardActionArea, Container, CssBaseline, Grid } from '@mui/material';
 const API = "http://localhost:3001/API/Reciclaje/Manualidad";
 const hoy=new Date();
 const ExpandMore = styled((props) => {
@@ -49,69 +49,83 @@ export default function RecipeReviewCard() {
     <>
      <CssBaseline />
       <main>
-        <Container sx={{ py: 8 }} maxWidth="md">
+      <Container sx={{ py: 8 }} maxWidth="md">
           <Grid container spacing={4}>
-              
-          {oData?.map((datos) => (
-              <Grid item xs={2} sm={4} md={4} key={datos._id}>
- <Card className='centro' sx={{ maxWidth: 1100 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            A
-          </Avatar>
-        }
-       
-        title={datos.oTitulo}        subheader= {hoy.toDateString()}
-      />
-      <CardMedia
-        component="img"
-        height="350"
-        image="https://source.unsplash.com/random"
-        alt="random"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-
-         {datos.oContenido}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon onClick={() => {
-                    setLike(!like);   
-                  }}
-                  color={like ? "primary" : "action"}      
-                  />
+              <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
+            {oData?.map((dato) => (
+              <Grid item xs={2} sm={4} md={4} key={dato._id}>
+                <Card sx={{ maxWidth: 345 }}>
+                 <CardHeader
+                    avatar={
+                      <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                        A
+                      </Avatar>
+                    }
                   
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Descripcion:</Typography>
-          <Typography paragraph>
-           {datos.oAutor}
-          </Typography>
-          <Typography paragraph>
-           {datos.oCategorias}
-          </Typography>
-        </CardContent>
-      </Collapse>
-        </Card>
+                    title={dato.oTitulo}        subheader= {hoy.toDateString()}
+                  />
+                  <CardActionArea disableSpacing>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image="https://source.unsplash.com/random"
+                      alt="random"
+                    />
+                    <CardContent>
+                      <Typography variant="body2" color="text.secondary">
+                        {dato.oContenido}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {dato.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon onClick={() => {
+                              setLike(!like);   
+                            }}
+                            color={like ? "primary" : "action"}      
+                            />
+                            
+                  </IconButton>
+                  <ExpandMore
+                    expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </ExpandMore>
+                    <Button size="small" color="primary" href={dato.data} >
+                    Ver mas 
+                    </Button>
+                  </CardActions>
+                  <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <CardContent>
+                  
+                    <Typography paragraph>
+                    <Box fontWeight='bold' display='inline'>Autor: </Box>
+                    {dato.oAutor}
+                    </Typography>
+                    <Typography paragraph>
+                    <Box fontWeight='bold' display='inline'>Materiales: </Box>
+                    {dato.oCategorias[0]}
+                    </Typography>
+                  </CardContent>
+                </Collapse>
+                </Card>
               </Grid>
-       
-        ))}
-             
+            ))}
+          </Grid>
           </Grid>
         </Container>
+        
+        
       </main>
     
     </>
