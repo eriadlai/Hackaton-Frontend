@@ -21,7 +21,6 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
@@ -40,7 +39,7 @@ export default function Principal() {
       </main>
       <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Re.cycle
         </Typography>
         <Typography
           variant="subtitle1"

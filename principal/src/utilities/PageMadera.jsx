@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Container, CssBaseline, Grid } from '@mui/material';
 const API = "http://localhost:3001/API/Reciclaje/Manualidad";
 const hoy=new Date();
 const ExpandMore = styled((props) => {
@@ -46,8 +47,14 @@ export default function RecipeReviewCard() {
   };
   return (
     <>
-     {oData?.map((datos) => (
-        <Card className='centro' sx={{ maxWidth: 1100 }}>
+     <CssBaseline />
+      <main>
+        <Container sx={{ py: 8 }} maxWidth="md">
+          <Grid container spacing={4}>
+              
+          {oData?.map((datos) => (
+              <Grid item xs={2} sm={4} md={4} key={datos._id}>
+ <Card className='centro' sx={{ maxWidth: 1100 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -98,8 +105,15 @@ export default function RecipeReviewCard() {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>
+        </Card>
+              </Grid>
+       
         ))}
+             
+          </Grid>
+        </Container>
+      </main>
+    
     </>
    
     
