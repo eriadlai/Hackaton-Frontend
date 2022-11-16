@@ -14,7 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Box, Button, CardActionArea, Container, CssBaseline, Grid } from '@mui/material';
+import { Box, Button, CardActionArea, Container, CssBaseline, Grid, Stack } from '@mui/material';
 const API = "http://localhost:3001/API/Reciclaje/Manualidad";
 const hoy=new Date();
 const ExpandMore = styled((props) => {
@@ -49,7 +49,8 @@ export default function RecipeReviewCard() {
     <>
      <CssBaseline />
       <main>
-      <Container sx={{ py: 8 }} maxWidth="md">
+        <Stack >
+        <Container sx={{ py: 8 }} maxWidth="md">
           <Grid container spacing={4}>
               <Grid
             container
@@ -124,8 +125,7 @@ export default function RecipeReviewCard() {
           </Grid>
           </Grid>
         </Container>
-        
-        
+        </Stack>
       </main>
     
     </>
