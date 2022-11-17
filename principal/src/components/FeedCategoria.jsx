@@ -42,8 +42,8 @@ const images = [
   },
   {
     url: "textilws.jpg",
-    title: "PageTextiles",
-
+    title: "Textiles",
+    data:"/PageTextiles",
     description: "Descripcion del apartado de TEXTILES",
     width: "25%",
   },

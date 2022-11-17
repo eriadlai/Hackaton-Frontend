@@ -5,7 +5,6 @@ import SignIn from "../pages/SignIn";
 import Navbar from "../components/BarraSuperior";
 import PostIdea from "../pages/PostIdea";
 import RecetaUbicacion from "../pages/RecetaUbicacion";
-import Publicaciones from "../pages/Publicaciones";
 import PageMadera from "../utilities/PageMadera";
 import PageMetales from "../utilities/PageMetales";
 import PagePapel from "../utilities/PagePapel";
@@ -22,7 +21,6 @@ export default function Router() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/PostIdea" element={<PostIdea />} />
         <Route path="/RecetaUbicacion" element={<RecetaUbicacion />} />
-        <Route path="/Publicaciones" element={<Publicaciones />} />
         <Route path="/PageMadera" element={<PageMadera />} />
         <Route path="/PageMetales" element={<PageMetales />} />
         <Route path="/PagePapel" element={<PagePapel />} />

@@ -7,7 +7,6 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import FeedCategoria from "../components/FeedCategoria"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -31,9 +30,7 @@ export default function Principal() {
       <main>
         <Container sx={{ py: 8 }} maxWidth="md">
           <Grid container spacing={4}>
-              
               <FeedCategoria/>
-             
           </Grid>
         </Container>
       </main>

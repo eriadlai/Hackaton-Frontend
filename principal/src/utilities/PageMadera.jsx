@@ -14,8 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Box, Button, CardActionArea, Container, CssBaseline, Grid, Stack } from '@mui/material';
-const API = "http://localhost:3001/API/Reciclaje/Manualidad";
+import { Box, CardActionArea, Container, CssBaseline, Grid, Stack } from '@mui/material';
+const API = "http://localhost:3001/API/Reciclaje/ManualidadByCategoria";
+
 const hoy=new Date();
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,20 +31,22 @@ const ExpandMore = styled((props) => {
 
 export default function RecipeReviewCard() {
     const [oData, setData] = useState();
-
+    const Filtro = {
+        "oCategorias":"madera"
+    }
     useEffect(() => {
-        // GET request using fetch inside useEffect React hook
-        fetch(API)
+        fetch(API,{
+          method: "POST",
+          body:JSON.stringify(Filtro),
+          headers: { 'Content-Type': 'application/json' }})
             .then(response => response.json())
             .then(data => setData(data));
-
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(-1);
   const [like, setLike] = useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpandClick = i => {
+    setExpanded(expanded === i ? -1 : i);
   };
   return (
     <>
@@ -57,13 +60,13 @@ export default function RecipeReviewCard() {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {oData?.map((dato) => (
+            {oData?.map((dato,i) => (
               <Grid item xs={2} sm={4} md={4} key={dato._id}>
                 <Card sx={{ maxWidth: 345 }}>
                  <CardHeader
                     avatar={
                       <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        A
+                        A {i}
                       </Avatar>
                     }
                   
@@ -95,18 +98,15 @@ export default function RecipeReviewCard() {
                             
                   </IconButton>
                   <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
+                    expand={expanded === i}
+                    onClick={() => handleExpandClick(i)}
+                    aria-expanded={expanded === i}
                     aria-label="show more"
                   >
                     <ExpandMoreIcon />
                   </ExpandMore>
-                    <Button size="small" color="primary" href={dato.data} >
-                    Ver mas 
-                    </Button>
                   </CardActions>
-                  <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <Collapse in={expanded === i} timeout="auto" unmountOnExit>
                   <CardContent>
                   
                     <Typography paragraph>
@@ -114,9 +114,21 @@ export default function RecipeReviewCard() {
                     {dato.oAutor}
                     </Typography>
                     <Typography paragraph>
-                    <Box fontWeight='bold' display='inline'>Materiales: </Box>
-                    {dato.oCategorias[0]}
+                    <Box fontWeight='bold' display='inline'>Categorias: </Box>
                     </Typography>
+                    {dato.oCategorias.map((cat)=>(
+                      <Typography>
+                        - {cat}
+                      </Typography>
+                    ))}
+                     <Typography paragraph>
+                      <Box fontWeight='bold' display='inline'>Materiales: </Box>
+                      </Typography>
+                      {dato.oMateriales.map((mat)=>(
+                      <Typography>
+                        - {mat}
+                      </Typography>
+                    ))}
                   </CardContent>
                 </Collapse>
                 </Card>

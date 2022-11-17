@@ -8,65 +8,64 @@ import MenuCategorias from "../components/MenuCategorias";
 import TextoListaMateriales from "../components/TextoListaMateriales";
 import TextoInstrucciones from "../components/TextoInstrucciones";
 import BotonImagen from "../components/BotonImagen";
+import { Card,  CardContent, Stack } from "@mui/material";
 
 export default function AddressForm() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
-    <React.Fragment>
-      <CssBaseline />
+     <>
+     <CssBaseline />
+      <main>
+        <Stack justifyContent={"center"}>
+        <Container sx={{ py: 8 }} maxWidth="md">
+          <Grid container spacing={2}>
+              <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 2, sm: 4, md: 12 }}
+          >
+              <Grid item xs={2} sm={4} md={8}>
+                <Card sx={{ maxWidth: 600}}>
+                  <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Información de Usuario
+                  </Typography>
+                  <Grid container spacing={5}>
+                    <Grid item xs={12} sm={6}>
+                      <TextField
+                        required
+                        id="autor"
+                        name="autor"
+                        label="Autor"
+                        fullWidth
+                        autoComplete="given-name"
+                        variant="standard"
+                      />
+                    </Grid>
 
-      <Container maxWidth="sm">
-        <Typography variant="h6" gutterBottom>
-          Información de Usuario
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="nombre"
-              name="nombre"
-              label="Nombre"
-              fullWidth
-              autoComplete="given-name"
-              variant="standard"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="apellido"
-              name="apellido"
-              label="Apellido"
-              fullWidth
-              autoComplete="family-name"
-              variant="standard"
-            />
-          </Grid>
+                    <Grid item xs={12}>
+                      <MenuCategorias />
+                    </Grid>
 
-          <Grid item xs={12}>
-            <MenuCategorias />
-          </Grid>
+                    <Grid item xs={12} sm={12}>
+                      <TextoListaMateriales />
+                    </Grid>
 
-          <Grid item xs={12} sm={12}>
-            <TextoListaMateriales />
+                    <Grid item xs={12} sm={12}>
+                      <TextoInstrucciones />
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                      <BotonImagen />
+                    </Grid>
+                  </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
           </Grid>
-
-          <Grid item xs={12} sm={12}>
-            <TextoInstrucciones />
           </Grid>
-          <Grid item xs={12} sm={12}>
-            <BotonImagen />
-          </Grid>
-        </Grid>
-      </Container>
-    </React.Fragment>
+        </Container>
+        </Stack>
+      </main>
+    
+    </>
   );
 }
