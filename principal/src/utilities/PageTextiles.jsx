@@ -50,99 +50,103 @@ export default function RecipeReviewCard() {
   };
   return (
     <>
-     <CssBaseline />
+      <CssBaseline />
       <main>
-        <Stack >
-        <Container sx={{ py: 8 }} maxWidth="md">
-          <Grid container spacing={4}>
+        <Stack>
+          <Container sx={{ py: 8 }} maxWidth="md">
+            <Grid container spacing={4}>
               <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
-          >
-            {oData?.map((dato,i) => (
-              <Grid item xs={2} sm={4} md={4} key={dato._id}>
-                <Card sx={{ maxWidth: 345 }}>
-                 <CardHeader
-                    avatar={
-                      <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        A {i}
-                      </Avatar>
-                    }
-                  
-                    title={dato.oTitulo}        subheader= {hoy.toDateString()}
-                  />
-                  <CardActionArea disableSpacing>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image="https://source.unsplash.com/random"
-                      alt="random"
-                    />
-                    <CardContent>
-                      <Typography variant="body2" color="text.secondary">
-                        {dato.oContenido}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {dato.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                  <IconButton aria-label="add to favorites">
-                    <FavoriteIcon onClick={() => {
-                              setLike(!like);   
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              >
+                {oData?.map((dato, i) => (
+                  <Grid item xs={2} sm={4} md={4} key={dato._id}>
+                    <Card sx={{ maxWidth: 345 }}>
+                      <CardHeader
+                        avatar={
+                          <Avatar
+                            sx={{ bgcolor: red[500] }}
+                            aria-label="recipe"
+                          >
+                            A {i}
+                          </Avatar>
+                        }
+                        title={dato.oTitulo}
+                        subheader={hoy.toDateString()}
+                      />
+                      <CardActionArea disableSpacing>
+                        <CardMedia
+                          component="img"
+                          height="140"
+                          image={dato.oUrlImage}
+                          alt="random"
+                        />
+                        <CardContent>
+                          <Typography variant="body2" color="text.secondary">
+                            {dato.oContenido}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {dato.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <IconButton aria-label="add to favorites">
+                          <FavoriteIcon
+                            onClick={() => {
+                              setLike(!like);
                             }}
-                            color={like ? "primary" : "action"}      
-                            />
-                            
-                  </IconButton>
-                  <ExpandMore
-                    expand={expanded === i}
-                    onClick={() => handleExpandClick(i)}
-                    aria-expanded={expanded === i}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
-                  </CardActions>
-                  <Collapse in={expanded === i} timeout="auto" unmountOnExit>
-                  <CardContent>
-                  
-                    <Typography paragraph>
-                    <Box fontWeight='bold' display='inline'>Autor: </Box>
-                    {dato.oAutor}
-                    </Typography>
-                    <Typography paragraph>
-                    <Box fontWeight='bold' display='inline'>Categorias: </Box>
-                    </Typography>
-                    {dato.oCategorias.map((cat)=>(
-                      <Typography>
-                        - {cat}
-                      </Typography>
-                    ))}
-                     <Typography paragraph>
-                      <Box fontWeight='bold' display='inline'>Materiales: </Box>
-                      </Typography>
-                      {dato.oMateriales.map((mat)=>(
-                      <Typography>
-                        - {mat}
-                      </Typography>
-                    ))}
-                  </CardContent>
-                </Collapse>
-                </Card>
+                            color={like ? "primary" : "action"}
+                          />
+                        </IconButton>
+                        <ExpandMore
+                          expand={expanded === i}
+                          onClick={() => handleExpandClick(i)}
+                          aria-expanded={expanded === i}
+                          aria-label="show more"
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                      </CardActions>
+                      <Collapse
+                        in={expanded === i}
+                        timeout="auto"
+                        unmountOnExit
+                      >
+                        <CardContent>
+                          <Typography paragraph>
+                            <Box fontWeight="bold" display="inline">
+                              Autor:{" "}
+                            </Box>
+                            {dato.oAutor}
+                          </Typography>
+                          <Typography paragraph>
+                            <Box fontWeight="bold" display="inline">
+                              Categorias:{" "}
+                            </Box>
+                          </Typography>
+                          {dato.oCategorias.map((cat) => (
+                            <Typography>- {cat}</Typography>
+                          ))}
+                          <Typography paragraph>
+                            <Box fontWeight="bold" display="inline">
+                              Materiales:{" "}
+                            </Box>
+                          </Typography>
+                          {dato.oMateriales.map((mat) => (
+                            <Typography>- {mat}</Typography>
+                          ))}
+                        </CardContent>
+                      </Collapse>
+                    </Card>
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
-          </Grid>
-        </Container>
+            </Grid>
+          </Container>
         </Stack>
       </main>
-    
     </>
-   
-    
-    
   );
 }
